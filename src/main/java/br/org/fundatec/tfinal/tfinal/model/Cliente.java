@@ -10,7 +10,7 @@ public class Cliente {
 
     private String cpf;
 
-    @OneToOne
+    @OneToOne(mappedBy = "assinante")
     private Plano plano;
     @OneToOne(mappedBy = "cliente")
     private Endereco endereco;

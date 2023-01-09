@@ -12,7 +12,8 @@ public class Plano  {
     @Column(nullable = false)
     private Double valor;
 
-    @OneToOne(mappedBy = "plano", optional = false)
+    @OneToOne(optional = false)
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente assinante;
 
     public Long getId() {
