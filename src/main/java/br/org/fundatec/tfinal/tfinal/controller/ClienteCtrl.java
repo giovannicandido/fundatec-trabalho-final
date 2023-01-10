@@ -32,14 +32,17 @@ public class ClienteCtrl {
         }
 
         Cliente cliente = new Cliente();
-        cliente.setCpf(cliente.getCpf());
+        cliente.setCpf(clienteDTO.getCpf());
         cliente.setEndereco(endereco);
         // todo setar plano
 
         service.create(cliente);
+//
+//        // Atualiza endereco apontando para cliente
+        endereco.setCliente(cliente);
+        enderecoService.update(endereco);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
-
 
     }
 }

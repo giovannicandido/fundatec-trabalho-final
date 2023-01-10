@@ -13,12 +13,20 @@ public class EnderecoService implements CrudService<Endereco> {
     }
 
     @Override
-    public void create(Endereco entity) {
-        this.enderecoRepository.save(entity);
+    public Endereco create(Endereco entity) {
+        return this.enderecoRepository.save(entity);
     }
 
     @Override
     public Endereco findById(Long idEndereco) {
-        return this.enderecoRepository.getById(idEndereco);
+        return this.enderecoRepository.findById(idEndereco).orElse(null);
+    }
+
+    @Override
+    public Endereco update(Endereco entity) {
+        if (entity.getId() == null) {
+            throw new RuntimeException("Entidade precisa de um id para atualizar");
+        }
+        return enderecoRepository.save(entity);
     }
 }

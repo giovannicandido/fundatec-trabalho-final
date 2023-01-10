@@ -49,6 +49,8 @@ Com o docker instalado rode o comando abaixo para ter um servidor MariaDB instal
 docker run -d --restart always --name mariadb -p 3306:3306 --env MARIADB_ROOT_PASSWORD=fundatec mariadb:10.9
 ```
 
+Você também pode usar algum instalador se não quiser usar docker: https://mariadb.org/download
+
 ### Criando o banco de dados para o projeto
 
 Acesse https://blog.gsilva.pro/roteiro-para-aula-de-introducao-ao-banco-de-dados-fundatec#heading-acessando-o-mysql e 

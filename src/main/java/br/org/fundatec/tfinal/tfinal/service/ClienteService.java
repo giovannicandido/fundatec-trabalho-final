@@ -13,12 +13,20 @@ public class ClienteService implements CrudService<Cliente> {
     }
 
     @Override
-    public void create(Cliente entity) {
-        this.repository.save(entity);
+    public Cliente create(Cliente entity) {
+        return this.repository.save(entity);
     }
 
     @Override
     public Cliente findById(Long idEndereco) {
         return repository.getById(idEndereco);
+    }
+
+    @Override
+    public Cliente update(Cliente entity) {
+        if (entity.getId() == null) {
+            throw new RuntimeException("Entidade precisa de um id para atualizar");
+        }
+        return repository.save(entity);
     }
 }
