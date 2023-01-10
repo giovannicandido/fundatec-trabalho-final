@@ -4,6 +4,14 @@ public class ClienteDTO {
     private String cpf;
     private Long idEndereco;
 
+    public ClienteDTO(String cpf, Long idEndereco) {
+        this.cpf = cpf;
+        this.idEndereco = idEndereco;
+    }
+
+    public ClienteDTO() {
+    }
+
     public String getCpf() {
         return cpf;
     }
