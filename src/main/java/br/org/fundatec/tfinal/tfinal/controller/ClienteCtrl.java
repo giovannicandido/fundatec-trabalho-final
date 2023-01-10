@@ -12,17 +12,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controlador Spring que irá receber as requisições para manipular um cliente
+ */
 @RestController
 @RequestMapping("/cliente")
 public class ClienteCtrl {
     private final ClienteService service;
     private final EnderecoService enderecoService;
 
+    /**
+     * Injeção de dependencias do spring
+     * @param service Serviço principal
+     * @param enderecoService Serviço de endereço
+     */
     public ClienteCtrl(ClienteService service, EnderecoService enderecoService) {
         this.service = service;
         this.enderecoService = enderecoService;
     }
 
+    /**
+     * Cria um novo cliente no banco de dados.
+     * Necessário ter um endereço com o ID do cliente cadastrado
+     * @param clienteDTO Informações do Cliente
+     * @return CREATED se persistido com sucesso
+     */
     @PostMapping
     public ResponseEntity create(@RequestBody ClienteDTO clienteDTO) {
         Endereco endereco = enderecoService.findById(clienteDTO.getIdEndereco());

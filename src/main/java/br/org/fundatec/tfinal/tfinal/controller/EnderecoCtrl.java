@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping(path = "/endereco")
+/**
+ * Controlador Spring para Manipular Endereços
+ */
+@RestController // Diz ao spring que é um controlador
+@RequestMapping(path = "/endereco") // mapeia a url para qual o controlador vai responder
 public class EnderecoCtrl {
     private final EnderecoService service;
 
@@ -18,6 +21,11 @@ public class EnderecoCtrl {
         this.service = service;
     }
 
+    /**
+     * Cria um novo endereço
+     * @param endereco Informações de endereço
+     * @return CREATED se criado com sucesso
+     */
     @PostMapping
     public ResponseEntity create(@RequestBody Endereco endereco) {
         service.create(endereco);

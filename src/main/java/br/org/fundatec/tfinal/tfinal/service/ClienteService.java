@@ -18,8 +18,8 @@ public class ClienteService implements CrudService<Cliente> {
     }
 
     @Override
-    public Cliente findById(Long idEndereco) {
-        return repository.getById(idEndereco);
+    public Cliente findById(Long id) {
+        return repository.getById(id);
     }
 
     @Override

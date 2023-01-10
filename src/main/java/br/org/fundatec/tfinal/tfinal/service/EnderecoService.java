@@ -18,8 +18,8 @@ public class EnderecoService implements CrudService<Endereco> {
     }
 
     @Override
-    public Endereco findById(Long idEndereco) {
-        return this.enderecoRepository.findById(idEndereco).orElse(null);
+    public Endereco findById(Long id) {
+        return this.enderecoRepository.findById(id).orElse(null);
     }
 
     @Override
