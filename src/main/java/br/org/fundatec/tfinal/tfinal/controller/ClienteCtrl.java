@@ -7,10 +7,7 @@ import br.org.fundatec.tfinal.tfinal.service.ClienteService;
 import br.org.fundatec.tfinal.tfinal.service.EnderecoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Controlador Spring que irá receber as requisições para manipular um cliente
@@ -58,5 +55,37 @@ public class ClienteCtrl {
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
+    }
+
+    /**
+     * Atualizar um cliente no banco de dados
+     * @param clienteDTO Informações a atualizar
+     * @param id Id do cliente a ser atualizado passado na URL
+     * @return OK se atualizado com sucesso
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity update(@RequestBody ClienteDTO clienteDTO,
+                                 @PathVariable("id") Long id) {
+        Endereco endereco = enderecoService.findById(clienteDTO.getIdEndereco());
+        if (endereco == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Não foi encontrado o endereco de id " + clienteDTO.getIdEndereco());
+        }
+
+        Cliente cliente = service.findById(id);
+
+        if (cliente == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Não foi encontrado o cliente de id " + id);
+        }
+        // atualiza informações
+        cliente.setCpf(clienteDTO.getCpf());
+
+        // atualiza no banco
+        service.update(cliente);
+        // atualiza o endereço
+        endereco.setCliente(cliente);
+        enderecoService.update(endereco);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
