@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import br.org.fundatec.tfinal.tfinal.dto.PlanoPersistDTO;
 
 @RestController
 @RequestMapping("/plano")
@@ -25,5 +26,22 @@ public class PlanoCtrl {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(plano);
+    }
+    
+    @PostMapping
+    public ResponseEntity create(@RequestBody PlanoPersistDTO plano) {
+        // todo validar se plano já não existe para o cliente
+        Cliente cliente = clienteService.findById(plano.getIdCliente());
+        Plano planoEntity = new Plano();
+        planoEntity.setValor(plano.getValor());
+        planoEntity.setAssinante(cliente);
+        planoService.create(planoEntity);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping("/recarga")
+    public ResponseEntity recarga(@RequestBody PlanoPersistDTO planoDTO) {
+        // todo recarga de plano
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
