@@ -1,0 +1,893 @@
+{
+	"info": {
+		"_postman_id": "2eddb5e1-fbd1-4a92-a2f3-8f410bb1c675",
+		"name": "TFinal",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Entrar Veiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idVeiculo\": 1,\n\t\"entrada\": \"2023-01-07 18:57:00\",\n\t\"nomeEstacionamento\": \"estacionamento1\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/tarifa/entrar",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"tarifa",
+						"entrar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/tarifa/entrar",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"tarifa",
+								"entrar"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 00:31:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"message\": \"JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String \\\"2023-01-07T18:57Z\\\": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2023-01-07T18:57Z' could not be parsed at index 10; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String \\\"2023-01-07T18:57Z\\\": Failed to deserialize java.time.LocalDateTime: (java.time.format.DateTimeParseException) Text '2023-01-07T18:57Z' could not be parsed at index 10\\n at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 13] (through reference chain: br.org.fundatec.tfinal.tfinal.dto.EntradaDTO[\\\"entrada\\\"])\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Criar estacionamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"estacionamento1\",\n    \"responsavel\": \"Gerente\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/estacionamento",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"estacionamento"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rua\": \"attilio\",\n\t\"numero\": 251,\n\t\"bairro\": \"Jardim Carvalho\",\n\t\"cep\": \"0000000\",\n\t\"cidade\": \"Porto Alegre\",\n\t\"estado\": \"Rio Grande do Sul\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL1}}/api/endereco",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"endereco"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Criar veiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipo\": \"CARRO\",\n\t\"placa\": \"CDI-4567\",\n\t\"idCliente\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/veiculo",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"veiculo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/veiculo",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"veiculo"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "sair com veiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idEntrada\": 1,\n\t\"saida\": \"2023-01-07T18:57Z\",\n\t\"valorPago\": 10.0\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/tarifa/sair",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"tarifa",
+						"sair"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/tarifa/sair",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"tarifa",
+								"sair"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 01:24:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"message\": \"Entrada não localizada\"\n}"
+				}
+			]
+		},
+		{
+			"name": "calcular tarifa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/tarifa/calcular?idVeiculo=1&saida=2023-01-08 20:00:00",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"tarifa",
+						"calcular"
+					],
+					"query": [
+						{
+							"key": "idVeiculo",
+							"value": "1"
+						},
+						{
+							"key": "saida",
+							"value": "2023-01-08 20:00:00"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/tarifa/calcular",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"tarifa",
+								"calcular"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 00:35:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"tarifa\": 1.7\n}"
+				}
+			]
+		},
+		{
+			"name": "Criar Tipo Tarifa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"taxaAteUmaHora\": 1.5,\n\t\"taxaAteMeiaHora\": 1.5,\n\t\"taxaAHoraAdicional\": 2,\n\t\"taxaDiaria\": 3,\n\t\"tipoVeiculo\": \"CARRO\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/tarifa-por-tipo",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"tarifa-por-tipo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/tarifa-por-tipo",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"tarifa-por-tipo"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Jan 2023 22:33:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"message\": \"Tarifa por tipo já existe no banco\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/cliente",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/cliente",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Jan 2023 22:32:52 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"cpf\": \"000000e00\",\n  \"idEndereco\": 1\n }\n]"
+				}
+			]
+		},
+		{
+			"name": "Editar Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cpf\": \"000000000\",\n\t\"idEndereco\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/cliente/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/cliente/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Jan 2023 22:32:48 GMT"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Criar novo plano",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"valor\": 100,\n\t\"idCliente\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/plano",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"plano"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/plano",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"plano"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 00:32:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Recarga de plano",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"valor\": 100,\n\t\"idCliente\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/plano/recarga",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"plano",
+						"recarga"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/plano/recarga",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"plano",
+								"recarga"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 11 Jan 2023 23:49:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"timestamp\": \"2023-01-11T23:49:20.205+00:00\",\n \"status\": 500,\n \"error\": \"Internal Server Error\",\n \"path\": \"/api/plano/recarga\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Listar plano de cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/plano/cliente/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"plano",
+						"cliente",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/api/plano/cliente/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"plano",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jan 2023 00:55:52 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"valor\": 100,\n \"cliente\": {\n  \"cpf\": \"000000000\",\n  \"idEndereco\": 1\n }\n}"
+				}
+			]
+		},
+		{
+			"name": "Criar Endereco",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/endereco",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"endereco"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/endereco",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"endereco"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Jan 2023 22:31:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Criar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cpf\": \"000000000\",\n\t\"idEndereco\": 1\n}"
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/cliente",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/cliente",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 Jan 2023 22:31:16 GMT"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Listar Planos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/api/plano/cliente/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"plano",
+						"cliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "http://localhost:8080",
+			"type": "any"
+		}
+	]
+}
