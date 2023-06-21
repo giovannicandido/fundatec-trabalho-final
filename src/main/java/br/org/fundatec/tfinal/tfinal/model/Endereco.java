@@ -11,19 +11,21 @@ public class Endereco {
 
     @Column(length = 100, nullable = false)
     private String rua;
+
+    @Column(nullable = false)
     private Integer numero;
 
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String cidade;
-    @Column(length = 20)
+    @Column(length = 20, nullable = false)
     private String estado;
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String bairro;
-    @Column(length = 8)
+    @Column(length = 8, nullable = false)
     private String cep;
 
     @OneToOne
-    @JoinColumn(name = "cliente_endereco")
+    @JoinColumn(name = "client_id")
     private Cliente cliente;
 
     public Long getId() {

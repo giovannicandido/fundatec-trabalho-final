@@ -46,7 +46,7 @@ spring.datasource.url=jdbc:mysql://localhost/tfinal
 Com o docker instalado rode o comando abaixo para ter um servidor MariaDB instalado:
 
 ```
-docker run -d --restart always --name mariadb -p 3306:3306 --env MARIADB_ROOT_PASSWORD=fundatec mariadb:10.9
+docker run -d --restart always --name mariadb -p 3306:3306 --env MARIADB_ROOT_PASSWORD=fundatec --env MARIADB_DATABASE=tfinal mariadb:10.9
 ```
 
 Você também pode usar algum instalador se não quiser usar docker: https://mariadb.org/download

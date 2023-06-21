@@ -1,22 +1,23 @@
 package br.org.fundatec.tfinal.tfinal.controller;
 
 import br.org.fundatec.tfinal.tfinal.dto.PlanoDTO;
+import br.org.fundatec.tfinal.tfinal.model.Cliente;
+import br.org.fundatec.tfinal.tfinal.model.Plano;
+import br.org.fundatec.tfinal.tfinal.service.ClienteService;
 import br.org.fundatec.tfinal.tfinal.service.PlanoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import br.org.fundatec.tfinal.tfinal.dto.PlanoPersistDTO;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/plano")
 public class PlanoCtrl {
     private final PlanoService planoService;
+    private final ClienteService clienteService;
 
-    public PlanoCtrl(PlanoService planoService) {
+    public PlanoCtrl(PlanoService planoService, ClienteService clienteService) {
         this.planoService = planoService;
+        this.clienteService = clienteService;
     }
 
     @GetMapping(path = "/cliente/{id}")
@@ -29,7 +30,7 @@ public class PlanoCtrl {
     }
     
     @PostMapping
-    public ResponseEntity create(@RequestBody PlanoPersistDTO plano) {
+    public ResponseEntity create(@RequestBody PlanoDTO plano) {
         // todo validar se plano já não existe para o cliente
         Cliente cliente = clienteService.findById(plano.getIdCliente());
         Plano planoEntity = new Plano();
@@ -40,7 +41,7 @@ public class PlanoCtrl {
     }
 
     @PostMapping("/recarga")
-    public ResponseEntity recarga(@RequestBody PlanoPersistDTO planoDTO) {
+    public ResponseEntity recarga(@RequestBody PlanoDTO planoDTO) {
         // todo recarga de plano
         return ResponseEntity.status(HttpStatus.OK).build();
     }

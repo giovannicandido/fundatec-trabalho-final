@@ -8,6 +8,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String cpf;
 
     @OneToOne(mappedBy = "assinante")

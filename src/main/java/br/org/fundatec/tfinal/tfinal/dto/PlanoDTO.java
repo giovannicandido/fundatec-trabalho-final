@@ -4,15 +4,15 @@ import br.org.fundatec.tfinal.tfinal.model.Cliente;
 
 public class PlanoDTO {
     private Double valor;
-    private ClienteDTO cliente;
+    private Long idCliente;
 
     public PlanoDTO() {
 
     }
 
-    public PlanoDTO(Double valor, String clientCPF, Long clienteEnderecoId) {
+    public PlanoDTO(Double valor, Long idCliente) {
         this.valor = valor;
-        this.cliente = new ClienteDTO(clientCPF, clienteEnderecoId);
+        this.idCliente = idCliente;
     }
 
     public Double getValor() {
@@ -23,11 +23,11 @@ public class PlanoDTO {
         this.valor = valor;
     }
 
-    public ClienteDTO getCliente() {
-        return cliente;
+    public Long getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(ClienteDTO cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 }

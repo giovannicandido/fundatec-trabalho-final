@@ -12,7 +12,7 @@ public interface PlanoRepository extends JpaRepository<Plano, Long> {
     @Query("select c from Plano c join c.assinante a where a.id = :id")
     Plano findByAssinanteId(@Param("id") Long id);
 
-    @Query("select new br.org.fundatec.tfinal.tfinal.dto.PlanoDTO(c.valor, a.cpf, a.endereco.id) " +
-            "from Plano c join c.assinante a where a.id = :id")
+    @Query("select new br.org.fundatec.tfinal.tfinal.dto.PlanoDTO(p.valor, a.id) " +
+            "from Plano p join p.assinante a where a.id = :id")
     PlanoDTO findPlanoDTOByAssinanteId(@Param("id") Long id);
 }
